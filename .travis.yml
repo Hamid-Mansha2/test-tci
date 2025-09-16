@@ -1,0 +1,12 @@
+language: php
+
+os: linux
+dist: trusty
+sudo: required
+group: stable
+
+php:
+  - '5.6'
+
+script:
+  - php -v
