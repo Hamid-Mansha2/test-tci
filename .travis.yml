@@ -1,12 +1,12 @@
 language: php
 
 os: linux
-dist: focal
+dist: jammy
 sudo: required
 group: stable
 
 php:
-  - '8.2.13'
+  - '8.2'
 
 addons:
   apt:
@@ -14,8 +14,11 @@ addons:
     packages:
       - libonig-dev
       - openjdk-17-jdk
-      - openjdk-17-jre
+
+sonarcloud:
+  organization: "eagle-eye-solutions"
 
 script:
   - php -v
   - java -version
+  - sonar-scanner -v
