@@ -1,24 +1,12 @@
-language: php
+dist: trusty
 
-os: linux
-dist: jammy
-sudo: required
-group: stable
+language: ruby
 
-php:
-  - '8.2'
+rvm:
+  - 2.0.0-p648
 
-addons:
-  apt:
-    update: true
-    packages:
-      - libonig-dev
-      - openjdk-17-jdk
-
-sonarcloud:
-  organization: "eagle-eye-solutions"
+sudo: false
 
 script:
-  - php -v
-  - java -version
-  - sonar-scanner -v
+  - ruby -v
+  - gem -v
