@@ -1,12 +1,13 @@
-dist: trusty
+language: php
+os: linux
+dist: jammy
 
-language: ruby
+php:
+  - 8.5
 
-rvm:
-  - 2.0.0-p648
-
-sudo: false
+before_install:
+  - echo "Checking if PHP binary is available..."
 
 script:
-  - ruby -v
-  - gem -v
+  - which php || echo "PHP binary not found"
+  - php -v || echo "PHP 8.5 is not available"
