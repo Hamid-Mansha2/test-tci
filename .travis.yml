@@ -1,13 +1,12 @@
-language: php
-os: linux
-dist: jammy
+dist: noble
+language: r
 
-php:
-  - 8.5
+r:
+  - release
 
 before_install:
-  - echo "Checking if PHP binary is available..."
+  - sudo apt-get update
+  - sudo apt-get -y install lz4
 
 script:
-  - which php || echo "PHP binary not found"
-  - php -v || echo "PHP 8.5 is not available"
+  - R --version
