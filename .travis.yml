@@ -1,12 +1,8 @@
-dist: noble
-language: r
-
-r:
-  - release
-
-before_install:
-  - sudo apt-get update
-  - sudo apt-get -y install lz4
+os: linux
+dist: jammy
+language: php
+php:
+  - '8.4'
 
 script:
-  - R --version
+  - php -v
